@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Scrum,Agile,retrospekcja,retrospektywa,retro" />
+    <meta name="description" content="Skuteczne retrospektywy." />
+    <title>Skuteczne retrospektywy</title>
+    <style type="text/css">
+        @font-face {
+          font-family: 'Ubuntu Mono';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(assets/ViZhet7Ak-LRXZMXzuAfkYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+        }
+        @font-face {
+          font-family: 'Ubuntu Mono';
+          font-style: normal;
+          font-weight: 700;
+          src: local('Ubuntu Mono Bold'), local('UbuntuMono-Bold'), url(assets/ceqTZGKHipo8pJj4molytjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
+        }
+        @font-face {
+          font-family: 'Ubuntu Mono';
+          font-style: italic;
+          font-weight: 400;
+          src: local('Ubuntu Mono Italic'), local('UbuntuMono-Italic'), url(assets/KAKuHXAHZOeECOWAHsRKA9kZXW4sYc4BjuAIFc1SXII.woff) format('woff');
+        }
+
+        @font-face {
+            font-family: 'Lato Regular';
+            src: url(assets/Lato-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: 'Ubuntu Medium';
+            src: url(assets/Ubuntu-M.ttf);
+        }
+
+        @font-face {
+            font-family: 'Ubuntu Regular';
+            src: url(assets/Ubuntu-R.ttf);
+        }
+
+        body {
+            font-family: 'Ubuntu Regular';
+            color: #515457;
+        }
+        h1, h2, h3 {
+            font-family: 'Ubuntu Medium';
+            font-weight: 400;
+            margin-bottom: 0;
+            letter-spacing: -0.5px;
+            color: #0f4e8c;
+        }
+        .remark-slide-content h1 { font-size: 3em; }
+        .remark-slide-content h2 { font-size: 2em; }
+        .remark-slide-content h3 {
+            font-size: 0.8em;
+            letter-spacing: 0.5px;
+        }
+        .footnote {
+            color: #0f4e8c;
+            font-family: 'Lato Regular';
+            font-weight: bold;
+            font-size: 0.8em;
+            position: relative;
+            top: 14em;
+            text-align: center;
+        }
+        li p { line-height: 1.25em; }
+        .red { color: #da4c4b; }
+        .green { color: #4cda4b; }
+        .large { font-size: 2em; }
+        a, a > code {
+            color: rgb(249, 38, 114);
+            text-decoration: none;
+        }
+        code {
+            -moz-border-radius: 5px;
+            -web-border-radius: 5px;
+            background: #e7e8e2;
+            border-radius: 5px;
+        }
+        .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+        .remark-code-line-highlighted     { background-color: #373832; }
+        .pull-left {
+            float: left;
+            width: 47%;
+        }
+        .pull-right {
+            float: right;
+            width: 47%;
+        }
+        .pull-right ~ p {
+            clear: both;
+        }
+        #slideshow .slide .content code {
+            font-size: 0.8em;
+        }
+        #slideshow .slide .content pre code {
+            font-size: 0.9em;
+            padding: 15px;
+        }
+        .inverse {
+            background: #272822;
+            color: #777872;
+            text-shadow: 0 0 20px #333;
+        }
+        .inverse h1, .inverse h2 {
+            color: #f3f3f3;
+            line-height: 0.8em;
+        }
+
+        /* Slide-specific styling */
+        #slide-inverse .footnote {
+            bottom: 12px;
+            left: 20px;
+        }
+        #slide-how .slides {
+            font-size: 0.9em;
+            position: absolute;
+            top:  151px;
+            right: 140px;
+        }
+        #slide-how .slides h3 {
+            margin-top: 0.2em;
+        }
+        #slide-how .slides .first, #slide-how .slides .second {
+            padding: 1px 20px;
+            height: 90px;
+            width: 120px;
+            -moz-box-shadow: 0 0 10px #777;
+            -webkit-box-shadow: 0 0 10px #777;
+            box-shadow: 0 0 10px #777;
+        }
+        #slide-how .slides .first {
+            background: #fff;
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            z-index: 1;
+        }
+        #slide-how .slides .second {
+            position: relative;
+            background: #fff;
+            z-index: 0;
+        }
+
+        /* Two-column layout */
+        .left-column {
+            color: #777;
+            width: 20%;
+            height: 92%;
+            float: left;
+        }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+            color: #000;
+        }
+        .right-column {
+            width: 75%;
+            float: right;
+            padding-top: 1em;
+        }
+        .right-column.next {
+            margin-top: -3em;
+        }
+
+
+        .remark-slide-number {
+            font-family: 'Lato Regular';
+            font-size: 0.8em;
+            color: #b6cde3;
+        }
+        h3 {
+            font-family: 'Lato Regular';
+            color: #da4c4b;
+        }
+        .remark-slide-content {
+            background: #f1fdff;
+            background: url(assets/itesky_medium.png), radial-gradient(ellipse at center, #fff 0%, #f1fdff 70%);
+            background-repeat: no-repeat;
+            background-position: 3% 3%;
+            background-size: 11%, 100%;
+        }
+        .remark-slide-content li {
+          font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+<textarea id="source">
+layout: true
+class: center, middle
+---
+#Skuteczne retrospektywy
+
+##.red[WOJCIECH ZAWISTOWSKI]
+---
+# Agile = Inspect & Adapt
+---
+.left-column[
+]
+.right-column.left[
+## Różne poziomy abstrakcji
+
+- produkt: iteracje, spotkania dzienne
+- system: TDD, pair programming
+- .green[proces: retrospektywa]
+]
+---
+## Szaleństwo: robić wciąż to samo i&nbsp;oczekiwać innych wyników.<br>.red[A. Einstein]
+---
+## By dostarczać większą wartość klientom i&nbsp;być bardziej konkurencyjnym, musimy ciągle usprawniać swój .green[proces].
+---
+## Retro = kluczowe spotkanie w Scrumie
+---
+.left-column[
+]
+.right-column.left[
+## Przebieg retro
+
+- wypunktowanie tematów
+- wybór tematów do dyskusji
+- dyskusja / analiza
+- .green[ustalenie akcji do podjęcia]
+]
+---
+.left-column[
+]
+.right-column.left[
+## Problemy
+
+- pusty ceremoniał
+- bezproduktywne narzekanie
+- marnotrastwo czasu
+- frustracja, demotywacja
+- .red[brak efektów]
+]
+---
+## Pryncypia efektywnego retro
+---
+.left-column[
+]
+.right-column.left[
+## Regularność
+
+- wymusza świadomą refleksję
+- nadaje rytm niezależny od projektów
+- kreuje kulturę ciągłej poprawy (kaizen)
+- ułatwia weryfikację akcji do podjęcia
+]
+---
+.left-column[
+]
+.right-column.left[
+## Tematyka
+
+- zespół (nie firma ani projekt)
+- optymalizacja procesu (nie ewaluacja itp.)
+- cokolwiek, co wiąże się z pracą zespołu
+- to, nad czym zespół ma kontrolę
+]
+---
+.left-column[
+]
+.right-column.left[
+## Własność
+
+- nikt z zewnątrz nie narzuca tematów
+- nikt z zewnątrz nie wyciąga wniosków
+- nikt z zewnątrz nie wyznacza akcji do podjęcia
+]
+---
+.left-column[
+]
+.right-column.left[
+## Własność
+
+- wspiera samoorganizację zespołu
+- zwiększa zaangażowanie zespołu
+- rozwija dojrzałość zespołu
+]
+---
+.left-column[
+]
+.right-column.left[
+## Swoboda wypowiedzi
+
+- anonimowy wybór tematów do dyskusji
+- Scrum Master nie może mieć ostatniego zdania
+- “surowe” notatki nie wychodzą poza retro
+]
+---
+.left-column[
+]
+.right-column.left[
+## Konstruktywny ton
+
+- także "pozytywy"
+- wypunktowujemy "pozytywy" najpierw
+- konstruktywny ton “negatywów”
+- bez obwiniania, szukamy systemowych przyczyn
+]
+---
+.left-column[
+]
+.right-column.left[
+## Akcje do podjęcia
+
+- obowiązkowo! nie uznajemy tematów bez rozwiązania
+- wykonalne do następnego retro (małe kroki)
+- dla każdej akcji wyznaczamy osobę odpowiedzialną
+]
+---
+.left-column[
+]
+.right-column.left[
+## Akcje do podjęcia
+
+- weryfikowalne / kwantyfikowalne
+- retro zaczynamy weryfikacją wykonania akcji z poprzedniego
+- akcje (i osoby odpowiedzialne) muszą być utrwalone
+]
+---
+.left-column[
+]
+.right-column.left[
+## Motywacja
+
+- celebruj nawet najmniejsze sukcesy
+- wspomagaj sukces (akcje łatwe do wykonania)
+- pokaż zespołowi, że retro działa
+]
+---
+.left-column[
+]
+.right-column.left[
+## Nasz zespół
+
+- ponad 85% skuteczności realizacji postanowień z retro
+- zespół sam dba o organizację retro pod nieobecność Scrum Mastera
+- większość usprawnień (także długofalowych) wywodzi się z retro
+]
+---
+# Dziękuję!
+
+## IT..red[e]SKY.pl/blog
+</textarea>
+<script src="assets/remark.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var slideshow = remark.create({
+        highlightStyle: 'sunburst',
+        highlightLanguage: 'php'
+    });
+</script>
+</body>
+</html>
